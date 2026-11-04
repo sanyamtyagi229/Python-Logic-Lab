@@ -1,6 +1,5 @@
 class Solution:
     def sortedListToBST(self, head: ListNode | None) -> TreeNode | None:
-        # Step 1: Convert the linked list into a standard Python list
         nums = []
         curr = head
         while curr:
