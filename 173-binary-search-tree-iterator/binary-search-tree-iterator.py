@@ -9,7 +9,7 @@ class BSTIterator:
 
     def __init__(self, root: TreeNode | None):
         self.stack = []
-        # Push all left descendants of the root onto the stack
+
         self._leftmost_inorder(root)
 
     def _leftmost_inorder(self, node: TreeNode | None):
@@ -23,17 +23,12 @@ class BSTIterator:
         """
         # The top of the stack is the next smallest element in the BST
         topest_node = self.stack.pop()
-        
-        # If the node has a right child, we need to process its left-most descendants
         if topest_node.right:
             self._leftmost_inorder(topest_node.right)
             
         return topest_node.val
 
     def hasNext(self) -> bool:
-        """
-        @return whether we have a next smallest number
-        """
         return len(self.stack) > 0
 
 
