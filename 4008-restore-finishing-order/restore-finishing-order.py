@@ -6,5 +6,5 @@ class Solution:
             if x in seen:
                 c.append(x)
         return c
-
+        
         
