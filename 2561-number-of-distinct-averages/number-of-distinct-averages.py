@@ -3,18 +3,12 @@ class Solution:
         nums.sort()
         i = 0
         j = len(nums) - 1
-        c = []
+        distinct_avgs = set()
+        
         while i < j:
-            a = nums[i]
-            b = nums[j]
-            avg = (a + b) / 2
-            c.append(avg)
+            avg = (nums[i] + nums[j]) / 2.0
+            distinct_avgs.add(avg)
             i += 1
             j -= 1
-        c.sort()
-        
-        k = 0
-        for idx in range(1, len(c)):
-            if c[idx - 1] != c[idx]:
-                k += 1
-        return k + 1 if len(c) > 0 else 0
+            
+        return len(distinct_avgs)
