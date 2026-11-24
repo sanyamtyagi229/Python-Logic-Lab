@@ -1,10 +1,8 @@
 
 class Solution:
     def maxSlidingWindow(self, nums, k):
-
         q = deque()
         ans = []
-
         for i in range(len(nums)):
             while q and q[0] <= i-k:
                 q.popleft()
